@@ -1,4 +1,7 @@
-import { claims, restaurants } from "@/lib/mockData";
+"use client";
+
+import { useClaims } from "@/app/claims/ClaimsProvider";
+import { restaurants } from "@/lib/mockData";
 
 const statusStyles: Record<string, string> = {
   DRAFT: "bg-slate-700 text-slate-100",
@@ -8,6 +11,8 @@ const statusStyles: Record<string, string> = {
 };
 
 export default function RestaurantPage() {
+  const { claims, submitClaim } = useClaims();
+
   return (
     <section className="space-y-6">
       <div className="space-y-2">
@@ -66,6 +71,15 @@ export default function RestaurantPage() {
                     <p className="mt-3 text-sm text-slate-400">
                       Evidence items: {claim.evidence.length}
                     </p>
+                    {claim.status === "DRAFT" ? (
+                      <button
+                        className="mt-4 rounded-full bg-emerald-400 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-950 transition hover:bg-emerald-300"
+                        type="button"
+                        onClick={() => submitClaim(claim.id)}
+                      >
+                        Submit claim
+                      </button>
+                    ) : null}
                   </div>
                 ))}
               </div>
