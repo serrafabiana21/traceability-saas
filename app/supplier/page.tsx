@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useClaims } from "@/app/claims/ClaimsProvider";
 import { suppliers } from "@/lib/mockData";
 
@@ -74,6 +76,12 @@ export default function SupplierPage() {
                     <p className="mt-3 text-sm text-slate-400">
                       Evidence items: {claim.evidence.length}
                     </p>
+                    <Link
+                      className="mt-2 inline-flex text-xs font-semibold uppercase tracking-wide text-sky-300 transition hover:text-sky-200"
+                      href={`/verify/${claim.id}`}
+                    >
+                      View public page
+                    </Link>
                     {claim.status === "SUBMITTED" ? (
                       <div className="mt-4 flex flex-wrap gap-2">
                         <button
