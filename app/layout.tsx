@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import { ClaimsProvider } from "./claims/ClaimsProvider";
+
 export const metadata = {
   title: "Traceability SaaS",
   description: "Verified sustainability & provenance claims.",
@@ -31,7 +33,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
           </nav>
         </header>
-        <main className="mx-auto w-full max-w-5xl px-6 py-16">{children}</main>
+        <ClaimsProvider>
+          <main className="mx-auto w-full max-w-5xl px-6 py-16">
+            {children}
+          </main>
+        </ClaimsProvider>
       </body>
     </html>
   );

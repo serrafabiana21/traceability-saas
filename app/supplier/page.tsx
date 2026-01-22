@@ -1,4 +1,7 @@
-import { claims, suppliers } from "@/lib/mockData";
+"use client";
+
+import { useClaims } from "@/app/claims/ClaimsProvider";
+import { suppliers } from "@/lib/mockData";
 
 const statusStyles: Record<string, string> = {
   DRAFT: "bg-slate-700 text-slate-100",
@@ -8,6 +11,8 @@ const statusStyles: Record<string, string> = {
 };
 
 export default function SupplierPage() {
+  const { claims, verifyClaim, rejectClaim } = useClaims();
+
   return (
     <section className="space-y-6">
       <div className="space-y-2">
@@ -69,6 +74,24 @@ export default function SupplierPage() {
                     <p className="mt-3 text-sm text-slate-400">
                       Evidence items: {claim.evidence.length}
                     </p>
+                    {claim.status === "SUBMITTED" ? (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        <button
+                          className="rounded-full bg-emerald-400 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-950 transition hover:bg-emerald-300"
+                          type="button"
+                          onClick={() => verifyClaim(claim.id)}
+                        >
+                          Verify
+                        </button>
+                        <button
+                          className="rounded-full border border-rose-400 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-rose-200 transition hover:border-rose-300 hover:text-rose-100"
+                          type="button"
+                          onClick={() => rejectClaim(claim.id)}
+                        >
+                          Reject
+                        </button>
+                      </div>
+                    ) : null}
                   </div>
                 ))}
               </div>
