@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useClaims } from "@/app/claims/ClaimsProvider";
 import { restaurants } from "@/lib/mockData";
 
@@ -71,6 +73,12 @@ export default function RestaurantPage() {
                     <p className="mt-3 text-sm text-slate-400">
                       Evidence items: {claim.evidence.length}
                     </p>
+                    <Link
+                      className="mt-2 inline-flex text-xs font-semibold uppercase tracking-wide text-sky-300 transition hover:text-sky-200"
+                      href={`/verify/${claim.id}`}
+                    >
+                      View public page
+                    </Link>
                     {claim.status === "DRAFT" ? (
                       <button
                         className="mt-4 rounded-full bg-emerald-400 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-950 transition hover:bg-emerald-300"
