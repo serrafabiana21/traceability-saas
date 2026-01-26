@@ -275,6 +275,132 @@ li {
   color: var(--muted);
 }
 
+.appShell {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.appSidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  padding: 28px 22px;
+  border-right: 1px solid var(--border);
+  background: #ffffff;
+  display: grid;
+  gap: 24px;
+}
+
+.appBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.appBrandMark {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #f0f0ee;
+}
+
+.appBrandTitle {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.appBrandSubtitle {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.appNav {
+  display: grid;
+  gap: 8px;
+}
+
+.appNavItem {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.appNavItem:hover {
+  color: var(--text);
+  border-color: var(--border);
+  background: #f7f7f2;
+}
+
+.appNavItem.active {
+  color: var(--text);
+  border-color: var(--border);
+  background: #f0f0ee;
+  font-weight: 600;
+}
+
+.appLogout {
+  margin-top: auto;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.appLogout:hover {
+  background: #f4f4f1;
+}
+
+.appMain {
+  padding: 40px 0;
+}
+
+.appContent {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.authCard {
+  max-width: 520px;
+  display: grid;
+  gap: 20px;
+}
+
+.formField {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.textInput {
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  background: #ffffff;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: #b4b7b4;
+  box-shadow: 0 0 0 3px rgba(30, 31, 31, 0.08);
+}
+
+.authActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .ctaSection {
   padding-bottom: 96px;
 }
@@ -318,6 +444,15 @@ li {
 @media (max-width: 960px) {
   .heroGrid {
     grid-template-columns: 1fr;
+  }
+
+  .appShell {
+    grid-template-columns: 1fr;
+  }
+
+  .appSidebar {
+    position: relative;
+    height: auto;
   }
 
   .gridThree {
