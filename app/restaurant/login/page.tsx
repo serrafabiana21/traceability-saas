@@ -1,19 +1,27 @@
-import Link from "next/link";
+"use client";
 
-const RestaurantLoginPage = () => {
+import type { FormEvent } from "react";
+
+export default function RestaurantLoginPage() {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log("Restaurant login submitted");
+  };
+
   return (
-    <div className="page">
-      <div className="container section">
-        <div className="sectionHeader">
-          <h2>Restaurant Login</h2>
-          <p className="muted">Access the restaurant portal to manage menus.</p>
+    <main>
+      <h1>Restaurant Login</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input id="email" name="email" type="email" required />
         </div>
-        <Link className="button" href="/restaurant/dashboard">
-          Continue to restaurant dashboard
-        </Link>
-      </div>
-    </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input id="password" name="password" type="password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </main>
   );
-};
-
-export default RestaurantLoginPage;
+}
