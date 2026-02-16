@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SustainTable Dashboard (Next.js + Tailwind CSS)
 
-## Getting Started
+A clean and minimal sustainability dashboard for restaurants, built with Next.js and Tailwind CSS.
 
-First, run the development server:
+## Features
+
+- Fixed left sidebar with core SaaS navigation.
+- Top header showing restaurant identity and avatar.
+- Dashboard view at `/restaurant` including:
+  - Upload Documentation panel with drag-and-drop support for PDF and image files.
+  - Circular Sustainability Score widget.
+  - Verified Suppliers list with check indicators.
+  - Recent Uploads table with realistic sample data.
+  - CO2 Emissions Summary chart placeholder.
+
+## Project Structure
+
+```text
+pages/
+  _app.js
+  index.js
+  restaurant/
+    index.js
+components/
+  Header.js
+  RecentUploads.js
+  ScoreWidget.js
+  Sidebar.js
+  UploadArea.js
+  VerifiedSuppliers.js
+styles/
+  globals.css
+tailwind.config.js
+package.json
+```
+
+## Installation
+
+```bash
+npm install
+```
+
+## Run Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Landing page: http://localhost:3000
+- Restaurant dashboard: http://localhost:3000/restaurant
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Build for Production
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
