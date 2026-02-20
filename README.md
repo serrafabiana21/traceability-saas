@@ -1,60 +1,34 @@
 # SustainTable Dashboard (Next.js + Tailwind CSS)
 
-A clean and minimal sustainability dashboard for restaurants, built with Next.js and Tailwind CSS.
+This project is a Next.js App Router application that provides a restaurant sustainability dashboard UI.
 
-## Features
+## Routes
 
-- Fixed left sidebar with core SaaS navigation.
-- Top header showing restaurant identity and avatar.
-- Dashboard view at `/restaurant` including:
-  - Upload Documentation panel with drag-and-drop support for PDF and image files.
-  - Circular Sustainability Score widget.
-  - Verified Suppliers list with check indicators.
-  - Recent Uploads table with realistic sample data.
-  - CO2 Emissions Summary chart placeholder.
+- `/` – Landing page with a link to the dashboard.
+- `/restaurant` – Full SaaS-style restaurant sustainability dashboard.
 
-## Project Structure
+## Getting Started
 
-```text
-pages/
-  _app.js
-  index.js
-  restaurant/
-    index.js
-components/
-  Header.js
-  RecentUploads.js
-  ScoreWidget.js
-  Sidebar.js
-  UploadArea.js
-  VerifiedSuppliers.js
-styles/
-  globals.css
-tailwind.config.js
-package.json
-```
+1. Install dependencies:
 
-## Installation
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+2. Run the development server:
 
-## Run Locally
+   ```bash
+   npm run dev
+   ```
 
-```bash
-npm run dev
-```
+3. Open the app in your browser:
 
-Open:
+   - http://localhost:3000/
+   - http://localhost:3000/restaurant
 
-- Landing page: http://localhost:3000
-- Restaurant dashboard: http://localhost:3000/restaurant
+## Stack
 
-## Build for Production
-
-```bash
-npm run build
-npm run start
-```
-
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- TypeScript

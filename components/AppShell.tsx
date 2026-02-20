@@ -47,7 +47,7 @@ const getNavItems = (role: UserRole): NavItem[] => {
 };
 
 export const AppShell = ({ role, children }: AppShellProps) => {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const router = useRouter();
   const navItems = getNavItems(role);
 
